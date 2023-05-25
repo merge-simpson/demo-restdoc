@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  swagger-integrated-proto:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-integrated-proto
+    ports:
+      - 8000:8000
+    restart: on-failure
+    environment:
+      API_URL: http://localhost:8000/docs/openapi3.yaml
