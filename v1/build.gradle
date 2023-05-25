@@ -53,6 +53,8 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+    finalizedBy 'openapi3'
+//    finalizedBy 'concatOpenApi'
 }
 
 bootJar {
@@ -70,7 +72,7 @@ bootJar {
 }
 
 openapi3 { // rest docs
-    server = 'https://localhost:8080'
+    server = 'https://localhost:8000'
     title = 'My API'
     description = 'My API description'
     println("a: " + project.rootDir)
@@ -79,6 +81,7 @@ openapi3 { // rest docs
     format = 'yaml'
 }
 
-tasks.register('concatOpenApi', Copy.class) {
-    from('build/api-spec') { into('src/main/resources/static/docs') }
-}
+// TODO 이런 느낌으로 뭔가 성공시켜서 -> OPEN API에 있는 내용을 -> Swagger UI가 읽어서 화면에 뿌려 줄 수 있게.
+//tasks.register('concatOpenApi', Copy.class) {
+//    from('build/api-spec') { into('src/main/resources/static/docs') }
+//}
