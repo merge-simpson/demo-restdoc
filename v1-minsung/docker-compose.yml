@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  swagger-integrated-proto:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-integrated-proto
+    ports:
+      - "8000:8080"
+    restart: on-failure
+    environment:
+      - URLS=
+        [
+        {url:'http://localhost:8080/docs/openapi3.sample-service.json',name:'Test'},
+        {url:'http://localhost:8080/docs/openapi3.my-subproject-a.json',name:'My Subproject A'},
+        {url:'http://localhost:8080/docs/openapi3.my-subproject-b.json',name:'My Subproject B'}
+        ]
