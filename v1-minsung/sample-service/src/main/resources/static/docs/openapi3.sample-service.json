@@ -9,11 +9,11 @@
     "url" : "https://localhost:8080"
   } ],
   "tags" : [ {
-    "name" : "carts",
-    "description" : "Carts related resources"
+    "name" : "members",
+    "description" : "Relative to Members"
   }, {
     "name" : "products",
-    "description" : "Products related resources"
+    "description" : "Relative to Products"
   } ],
   "paths" : {
     "/" : {
