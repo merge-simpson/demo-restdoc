@@ -1,0 +1,19 @@
+## Swagger springdoc-ui Configuration
+#springdoc:
+#  packages-to-scan: com.example
+#  default-consumes-media-type: application/json;charset=UTF-8
+#  default-produces-media-type: application/json;charset=UTF-8
+#  swagger-ui:
+#    path: auth-api.html           # Swagger UI ?? => localhost:8000/auth-api.html
+#    tags-sorter: alpha            # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬
+#    operations-sorter: alpha      # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬
+#  api-docs:
+#    path: /docs
+#    groups:
+#      enabled: true
+#  cache:
+#    disabled: true
+
+spring:
+  config:
+    import: app/webapp/cors.yml

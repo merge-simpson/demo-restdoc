@@ -1,0 +1,90 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "My API",
+    "description" : "My API description",
+    "version" : "0.1.0"
+  },
+  "servers" : [ {
+    "url" : "https://localhost:8080"
+  } ],
+  "tags" : [ {
+    "name" : "carts",
+    "description" : "Carts related resources"
+  }, {
+    "name" : "products",
+    "description" : "Products related resources"
+  } ],
+  "paths" : {
+    "/" : {
+      "post" : {
+        "summary" : "API 설명 요약입니다.",
+        "description" : "이것이 바로 API 설명입니다.",
+        "operationId" : "my-sample-api-identifiersample",
+        "requestBody" : {
+          "content" : {
+            "application/json;charset=UTF-8" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/1823067363"
+              },
+              "examples" : {
+                "sample" : {
+                  "value" : "{\n  \"name\" : \"홍길동\",\n  \"age\" : 17\n}"
+                },
+                "my-sample-api-identifier" : {
+                  "value" : "{\"name\":\"홍길동\",\"age\":17}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/912384270"
+                },
+                "examples" : {
+                  "sample" : {
+                    "value" : "{\n  \"success\" : true\n}"
+                  },
+                  "my-sample-api-identifier" : {
+                    "value" : "{\"success\":true}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "1823067363" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "이름"
+          },
+          "age" : {
+            "type" : "number",
+            "description" : "나이"
+          }
+        }
+      },
+      "912384270" : {
+        "type" : "object",
+        "properties" : {
+          "success" : {
+            "type" : "boolean",
+            "description" : "성공"
+          }
+        }
+      }
+    }
+  }
+}
