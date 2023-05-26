@@ -68,31 +68,31 @@ subprojects {
     }
 
     bootJar {
-        from("$asciidoctor.outputDir") {
-            into "BOOT-INF/classes/static/docs"
-        }
-        from("swagger-ui") {
-            into "BOOT-INF/classes/static/swagger"
-        }
-        from("build/api-spec") {
-            into "BOOT-INF/classes/static/swagger"
-        }
+//        from("$asciidoctor.outputDir") {
+//            into "BOOT-INF/classes/static/docs"
+//        }
+//        from("swagger-ui") {
+//            into "BOOT-INF/classes/static/swagger"
+//        }
+//        from("build/api-spec") {
+//         into "BOOT-INF/classes/static/swagger"
+//        }
 
         archiveFileName.set "application.jar"
     }
 
     openapi3 { // rest docs
-//        println("project.rootProject.rootDir: $project.rootProject.rootDir")
-//        println("project.name: ${project.name}")
+        println("project.rootProject.rootDir: $project.rootProject.rootDir")
+        println("project.name: ${project.name}")
 
         server = 'https://localhost:8080'
         title = 'My API'
         description = 'My API description'
-        // tagDescriptionsPropertiesFile = "${project.rootProject.projectDir}/docs/tag-descriptions.yml"
+         tagDescriptionsPropertiesFile = "${project.rootProject.projectDir}/docs/tag-descriptions.yml"
         version = '0.1.0'
         format = 'json'
         outputDirectory = "src/main/resources/static/docs"
-//        outputFileNamePrefix = "openapi3.${project.name}"
+        outputFileNamePrefix = "openapi3.${project.name}"
     }
 }
 
