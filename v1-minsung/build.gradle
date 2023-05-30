@@ -85,6 +85,8 @@ subprojects {
         println("project.rootProject.rootDir: $project.rootProject.rootDir")
         println("project.name: ${project.name}")
 
+        project.mkdir "${project.projectDir}/src/main/resources/static/docs"
+
         server = 'https://localhost:8080'
         title = 'My API'
         description = 'My API description'
