@@ -82,19 +82,19 @@ subprojects {
     }
 
     openapi3 { // rest docs
-        println("project.rootProject.rootDir: $project.rootProject.rootDir")
-        println("project.name: ${project.name}")
-
-        project.mkdir "${project.projectDir}/src/main/resources/static/docs"
+        println("project.rootProject.rootDir: $project.rootProject.projectDir")
+        println("project.name: $project.name")
 
         server = 'https://localhost:8080'
         title = 'My API'
         description = 'My API description'
-         tagDescriptionsPropertiesFile = "${project.rootProject.projectDir}/docs/tag-descriptions.yml"
+        tagDescriptionsPropertiesFile = "${project.rootProject.projectDir}/docs/tag-descriptions.yml"
         version = '0.1.0'
         format = 'json'
-        outputDirectory = "src/main/resources/static/docs"
+        outputDirectory = 'src/main/resources/static/docs'
         outputFileNamePrefix = "openapi3.${project.name}"
+
+        project.mkdir "$project.projectDir/$outputDirectory"
     }
 }
 
